@@ -17,7 +17,7 @@ class TestUserAddToBasketFromProductPage():
         page.should_be_authorized_user()
 
     @pytest.mark.need_review
-    def test_user_can_add_product_to_cart(self, browser):
+    def test_user_can_add_product_to_basket(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
         page = ProductPage(browser, link)
         page.open()
@@ -25,7 +25,7 @@ class TestUserAddToBasketFromProductPage():
         page.solve_quiz_and_get_code()
         page.check_success_message()
 
-    def test_user_can_see_success_message_after_adding_product_to_cart(self, browser):
+    def test_user_can_see_success_message_after_adding_product_to_basket(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         page = ProductPage(browser, link)
         page.open()
@@ -33,7 +33,7 @@ class TestUserAddToBasketFromProductPage():
         page.should_be_success_message()
 
 @pytest.mark.need_review
-def test_guest_can_add_product_to_cart(browser):
+def test_guest_can_add_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
     page = ProductPage(browser, link)
     page.open()
@@ -42,7 +42,7 @@ def test_guest_can_add_product_to_cart(browser):
     page.check_success_message()
 
 @pytest.mark.need_review
-def test_guest_can_see_success_message_after_adding_product_to_cart(browser):
+def test_guest_can_see_success_message_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
@@ -56,7 +56,7 @@ def test_guest_cant_see_success_message(browser):
     page.should_not_be_success_message()
 
 @pytest.mark.skip
-def test_message_disappeared_after_adding_product_to_cart(browser):
+def test_message_disappeared_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
