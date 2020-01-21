@@ -10,7 +10,6 @@ class ProductPage(BasePage):
         assert True
 
     def check_success_message(self):
-        #WebDriverWait(self.browser, 60).until(EC.presence_of_element_located(*ProductPageLocators.SUCCESS_MESSAGE))
         assert self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text == self.browser.find_elements_by_css_selector('.alertinner > strong')[0].text
         assert self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text == self.browser.find_element_by_css_selector('.alertinner > p > strong').text
 
