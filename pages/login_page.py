@@ -18,3 +18,9 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         self.browser.find_element(*LoginPageLocator.REGISTER_FORM)
         assert True, "No register form!"
+
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocator.REGISTRATION_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocator.REGISTRATION_PASSWORD_1).send_keys(password)
+        self.browser.find_element(*LoginPageLocator.REGISTRATION_PASSWORD_2).send_keys(password)
+        self.browser.find_element(*LoginPageLocator.REGISTER_BUTTON).click()
